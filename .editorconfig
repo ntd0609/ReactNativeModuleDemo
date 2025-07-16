@@ -1,0 +1,40 @@
+# Top-most EditorConfig file
+root = true
+
+# ==== Mặc định cho tất cả các file ====
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+
+# ==== Cho JavaScript, TypeScript, JSON, Markdown ====
+[*.{js,jsx,ts,tsx,json,md}]
+indent_size = 2
+
+# ==== Cho YAML ====
+[*.{yml,yaml}]
+indent_size = 2
+
+# ==== Cho Swift / Objective-C ====
+[*.{swift,m,h}]
+indent_size = 2
+
+# ==== Cho Java / Kotlin / Gradle ====
+[*.{java,kt,gradle}]
+indent_size = 4
+
+# ==== Cho XML (Android layouts, plist, etc) ====
+[*.xml]
+indent_size = 2
+
+# ==== Makefiles (phải dùng tab) ====
+[Makefile]
+indent_style = tab
+
+# ==== Ignore binary and asset files ====
+[*.{png,jpg,jpeg,gif,ico,ttf,otf,mp3,mp4}]
+trim_trailing_whitespace = false
+insert_final_newline = false

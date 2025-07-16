@@ -1,20 +1,27 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { Button } from './Button';
+import NativeDemo from './NativeDevelopment/specs/NativeDemoSpec';
 
 function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+  const test = NativeDemo.multiply(3, 5);
+  const helloword = NativeDemo.helloword();
+  const hideNav = () => {
+    NativeDemo.hideNavigationBar();
+  };
+  const showNav = () => {
+    NativeDemo.showNavigationBar();
+  };
+  const toogleNav = () => {
+    NativeDemo.toggleNavigationBar();
+  };
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
+      <Button>{test}</Button>
+      <Button>{helloword}</Button>
+      <Button onPress={hideNav}>Hide</Button>
+      <Button onPress={showNav}>Show</Button>
+      <Button onPress={toogleNav}>Toggle</Button>
     </View>
   );
 }
@@ -22,6 +29,10 @@ function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 15,
+    margin: 30,
   },
 });
 
