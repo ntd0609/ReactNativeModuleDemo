@@ -1,4 +1,4 @@
-package com.nativelocalstorage
+package com.nativedemo
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -7,14 +7,18 @@ import android.app.Activity
 import android.view.View
 import android.graphics.Color
 
-import com.nativelocalstorage.NativeLocalStorageSpec
+import com.nativedemo.NativeDemoSpec
 import com.facebook.react.bridge.ReactApplicationContext
 
 
 
 
 
-class NativeLocalStorageModule(reactContext: ReactApplicationContext) : NativeLocalStorageSpec(reactContext) {
+class NativeDemoModule(reactContext: ReactApplicationContext) : NativeDemoSpec(reactContext) {
+
+    companion object {
+        const val NAME = "NativeDemo"
+    }
 
     override fun getName() = NAME
 
@@ -70,13 +74,5 @@ class NativeLocalStorageModule(reactContext: ReactApplicationContext) : NativeLo
                 showNavigationBar()
             }
         }
-    }
-
-
-
-
-
-    companion object {
-        const val NAME = "NativeLocalStorage"
     }
 }

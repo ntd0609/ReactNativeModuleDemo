@@ -8,15 +8,14 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "native": "rm -rf node_modules && yarn --force && adb reverse tcp:8081 tcp:8081 && npm run native:init && npm run native:start",
+    "native": "rm -rf node_modules && rm -rf yarn.lock && yarn --force && adb reverse tcp:8081 tcp:8081 && yarn native:init && yarn native:start",
     "native:init": "npx react-native codegen --platform android",
-    "native:start": "npm run android && npm run start"
+    "native:start": "yarn android && yarn start"
   },
   "dependencies": {
     "react": "19.1.0",
     "react-native": "0.80.1",
-    "@react-native/new-app-screen": "0.80.1",
-    "@nativedevelopment": "file:./NativeDevelopment"
+    "@react-native/new-app-screen": "0.80.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

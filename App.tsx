@@ -1,6 +1,6 @@
 import { StyleSheet, View } from 'react-native';
 import { Button } from './Button';
-import NativeDemo from './NativeDevelopment/specs/NativeDemoSpec';
+import NativeDemo from './NativeDevelopment/specs/NativeDemo';
 
 function App() {
   const test = NativeDemo.multiply(3, 5);
